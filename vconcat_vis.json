@@ -1,0 +1,59 @@
+{
+    "vconcat": [
+        {
+            "title":"Sleeptime",
+            "data": {
+                "values" :
+                [
+                    {"weekday":"Monday", "sleeptime": 4.5},
+                    {"weekday":"Tuesday", "sleeptime": 4},
+                    {"weekday":"Wednesday", "sleeptime": 6.5},
+                    {"weekday":"Thursday", "sleeptime": 7},
+                    {"weekday":"Friday", "sleeptime": 9},
+                    {"weekday":"Saturday", "sleeptime": 7},
+                    {"weekday":"Sunday", "sleeptime": 9}
+        
+                ]
+            },
+            "mark":"bar",
+            "encoding":{
+                "x": {"field":"weekday",
+                      "type":"ordinal",
+                      "sort":["Monday","Tuesday","Wednesday", "Thursday","Friday","Saturday","Sunday"]},
+                "y": {"field":"sleeptime",
+                      "type":"quantitative"}
+            }
+        },{
+            "title":"Gaming Time",
+            "data": {
+                "values" :
+                [
+                    {"weekday":"Monday", "gamingtime": 2.5},
+                    {"weekday":"Tuesday", "gamingtime": 2},
+                    {"weekday":"Wednesday", "gamingtime": 0},
+                    {"weekday":"Thursday", "gamingtime": 2.5},
+                    {"weekday":"Friday", "gamingtime": 4},
+                    {"weekday":"Saturday", "gamingtime": 0},
+                    {"weekday":"Sunday", "gamingtime": 3.5}
+        
+                ]
+            },
+            "mark":"bar",
+            "encoding":{
+                "x": {"field":"weekday",
+                      "type":"ordinal",
+                      "sort":["Monday","Tuesday","Wednesday", "Thursday","Friday","Saturday","Sunday"]
+                      },
+                "y": {"field":"gamingtime",
+                      "type":"quantitative",
+                      "color":"red"},
+                "color": {"value": "#ff9900"}
+
+            }
+        }
+    ]
+}
+
+
+
+

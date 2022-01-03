@@ -1,0 +1,28 @@
+{
+    "title":"Ordered Sleeptime Area Vis",
+    "data": {
+        "values" :
+        [
+            {"weekday":"Monday", "sleeptime": 4.5},
+            {"weekday":"Tuesday", "sleeptime": 4},
+            {"weekday":"Wednesday", "sleeptime": 6.5},
+            {"weekday":"Thursday", "sleeptime": 7},
+            {"weekday":"Friday", "sleeptime": 9},
+            {"weekday":"Saturday", "sleeptime": 7},
+            {"weekday":"Sunday", "sleeptime": 9}
+
+        ]
+    },
+    "mark":"area",
+    "encoding":{
+        "x": {"field":"weekday",
+              "type":"ordinal",
+              "sort": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"]},
+        "y": {"field":"sleeptime",
+              "type":"quantitative"}
+    }
+}
+
+
+
+

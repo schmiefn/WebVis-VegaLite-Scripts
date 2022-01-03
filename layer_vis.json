@@ -1,0 +1,52 @@
+{
+    "title":"Layered Sleeptime vis with mean",
+    "data": {
+        "values" :
+        [
+            {"weekday":"Monday", "sleeptime": 4.5},
+            {"weekday":"Tuesday", "sleeptime": 4},
+            {"weekday":"Wednesday", "sleeptime": 6.5},
+            {"weekday":"Thursday", "sleeptime": 7},
+            {"weekday":"Friday", "sleeptime": 9},
+            {"weekday":"Saturday", "sleeptime": 7},
+            {"weekday":"Sunday", "sleeptime": 9}
+
+        ]
+    },
+    "layer": [
+        {
+            "params": [{
+                "name": "brush",
+                "select": {"type": "interval", "encodings": ["x"]}
+            }],
+            "mark":"bar",
+            "encoding":{
+                "x": {"field":"weekday",
+                    "type":"ordinal",
+                    "sort":["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"]},
+                "y": {"field":"sleeptime",
+                    "type":"quantitative"}
+            },
+            "opacity": {
+                "condition": {
+                  "param": "brush", "value": 1
+                },
+                "value": 0.7
+              }
+        },
+        {
+            "transform": [{
+                "filter": {"param": "brush"}
+            }],
+            "mark":"rule",
+            "encoding":{
+                "y":{"field":"sleeptime","type":"quantitative","aggregate":"mean"},
+                "color": {"value":"red"},
+                "size": {"value":5}
+            }
+        }
+    ],
+    "resolve": {
+        "y":{"scale":"union"}
+    }  
+}

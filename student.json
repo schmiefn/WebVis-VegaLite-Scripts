@@ -1,0 +1,12 @@
+{
+    "name":"Fabian",
+    "age":21,
+    "isPresenting":true,
+    "lectures":["KI", "CG", "GIS"],
+    "fellowStudent": {
+        "name":"Markus",
+        "age":21,
+        "isPresenting":false,
+        "lectures":["KI", "CG", "GIS"]
+    }
+}
