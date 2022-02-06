@@ -1,0 +1,179 @@
+[
+    {
+      "data": {
+        "values": [
+          {
+            "weekday": "Monday",
+            " sleeptime": "4.5",
+            "quality": "bad"
+          },
+          {
+            "weekday": "Tuesday",
+            " sleeptime": "4",
+            "quality": "bad"
+          },
+          {
+            "weekday": "Wednesday",
+            " sleeptime": "6.5",
+            "quality": "good"
+          },
+          {
+            "weekday": "Thursday",
+            " sleeptime": "7",
+            "quality": "awesome"
+          },
+          {
+            "weekday": "Friday",
+            " sleeptime": "9",
+            "quality": "awesome"
+          },
+          {
+            "weekday": "Saturday",
+            " sleeptime": "7",
+            "quality": "good"
+          },
+          {
+            "weekday": "Sunday",
+            " sleeptime": "9",
+            "quality": "good"
+          },
+          {
+            "weekday": "Monday",
+            " sleeptime": "4",
+            "quality": "good"
+          },
+          {
+            "weekday": "Tuesday",
+            " sleeptime": "4",
+            "quality": "awful"
+          },
+          {
+            "weekday": "Wednesday",
+            " sleeptime": "3.5",
+            "quality": "awful"
+          },
+          {
+            "weekday": "Thursday",
+            " sleeptime": "9",
+            "quality": "awesome"
+          },
+          {
+            "weekday": "Friday",
+            " sleeptime": "6",
+            "quality": "good"
+          },
+          {
+            "weekday": "Saturday",
+            " sleeptime": "7",
+            "quality": "good"
+          },
+          {
+            "weekday": "Sunday",
+            " sleeptime": "8",
+            "quality": "good"
+          },
+          {
+            "weekday": "Monday",
+            " sleeptime": "5",
+            "quality": "bad"
+          },
+          {
+            "weekday": "Tuesday",
+            " sleeptime": "5",
+            "quality": "bad"
+          },
+          {
+            "weekday": "Wednesday",
+            " sleeptime": "7",
+            "quality": "good"
+          },
+          {
+            "weekday": "Thursday",
+            " sleeptime": "8",
+            "quality": "good"
+          },
+          {
+            "weekday": "Friday",
+            " sleeptime": "6",
+            "quality": "good"
+          },
+          {
+            "weekday": "Saturday",
+            " sleeptime": "8",
+            "quality": "awesome"
+          },
+          {
+            "weekday": "Sunday",
+            " sleeptime": "8",
+            "quality": "awesome"
+          },
+          {
+            "weekday": "Monday",
+            " sleeptime": "5",
+            "quality": "bad"
+          },
+          {
+            "weekday": "Tuesday",
+            " sleeptime": "4",
+            "quality": "bad"
+          },
+          {
+            "weekday": "Wednesday",
+            " sleeptime": "4",
+            "quality": "awful"
+          },
+          {
+            "weekday": "Thursday",
+            " sleeptime": "7",
+            "quality": "good"
+          },
+          {
+            "weekday": "Friday",
+            " sleeptime": "7",
+            "quality": "good"
+          },
+          {
+            "weekday": "Saturday",
+            " sleeptime": "7",
+            "quality": "awesome"
+          },
+          {
+            "weekday": "Sunday",
+            " sleeptime": "7.5",
+            "quality": "awesome"
+          }
+        ]
+      },
+      "transform": {},
+      "mark": "bar",
+      "encoding": {
+        "x": {
+          "field": "weekday",
+          "type": "nominal"
+        },
+        "y": {
+          "aggregate": "mean",
+          "field": " sleeptime",
+          "type": "quantitative"
+        },
+        "color": {
+          "field": "quality",
+          "type": "nominal"
+        }
+      },
+      "config": {
+        "overlay": {
+          "line": true
+        },
+        "scale": {
+          "useRawDomain": true
+        },
+        "facet": {
+          "cell": {
+            "width": 150,
+            "height": 150
+          }
+        }
+      }
+    }
+  ]
