@@ -1,0 +1,414 @@
+{
+  "width": 800,
+  "height": 700,
+  "padding": "auto",
+  "data": [
+    {
+      "name": "sleeptime",
+      "format": {
+        "parse": {
+          "sleeptime": "number"
+        }
+      },
+      "values": [
+        {
+          "weekday": "Monday",
+          "sleeptime": "4.5"
+        },
+        {
+          "weekday": "Tuesday",
+          "sleeptime": "4"
+        },
+        {
+          "weekday": "Wednesday",
+          "sleeptime": "6.5"
+        },
+        {
+          "weekday": "Thursday",
+          "sleeptime": "7"
+        },
+        {
+          "weekday": "Friday",
+          "sleeptime": "9"
+        },
+        {
+          "weekday": "Saturday",
+          "sleeptime": "7"
+        },
+        {
+          "weekday": "Sunday",
+          "sleeptime": "9"
+        }
+      ],
+      "lyra.role": "data_source"
+    },
+    {
+      "name": "pipeline_0",
+      "lyra.displayName": "Sleeptime",
+      "source": "sleeptime",
+      "transform": [
+        {
+          "type": "stats",
+          "value": "data.sleeptime",
+          "assign": true,
+          "output": {
+            "count": "count_sleeptime",
+            "min": "min_sleeptime",
+            "max": "max_sleeptime",
+            "sum": "sum_sleeptime",
+            "mean": "mean_sleeptime",
+            "variance": "variance_sleeptime",
+            "stdev": "stdev_sleeptime",
+            "median": "median_sleeptime"
+          }
+        }
+      ]
+    }
+  ],
+  "scales": [],
+  "marks": [
+    {
+      "properties": {
+        "enter": {
+          "x": {
+            "value": 1
+          },
+          "width": {
+            "value": 800,
+            "default": 1
+          },
+          "y": {
+            "value": 0
+          },
+          "height": {
+            "value": 700,
+            "default": 1
+          },
+          "clip": {
+            "value": 0
+          },
+          "fill": {
+            "value": "#ffffff"
+          },
+          "fillOpacity": {
+            "value": 0
+          },
+          "stroke": {
+            "value": "#000000"
+          },
+          "strokeWidth": {
+            "value": 0
+          }
+        }
+      },
+      "scales": [
+        {
+          "type": "ordinal",
+          "points": false,
+          "nice": true,
+          "padding": 0,
+          "zero": true,
+          "name": "pipeline_0_scale_0",
+          "domain": {
+            "data": "pipeline_0",
+            "field": "data.weekday"
+          },
+          "inheritFromGroup": false,
+          "range": "width",
+          "lyra.displayName": "X"
+        },
+        {
+          "type": "linear",
+          "points": true,
+          "nice": true,
+          "padding": 0,
+          "zero": true,
+          "name": "pipeline_0_scale_1",
+          "domain": {
+            "data": "pipeline_0",
+            "field": "data.sleeptime"
+          },
+          "inheritFromGroup": false,
+          "range": "height",
+          "lyra.displayName": "Y"
+        }
+      ],
+      "axes": [
+        {
+          "type": "x",
+          "orient": "bottom",
+          "scale": "pipeline_0_scale_0",
+          "title": "Weekday",
+          "layer": "back",
+          "ticks": 10,
+          "tickSize": 6,
+          "titleOffset": 35,
+          "properties": {
+            "ticks": {
+              "stroke": {
+                "value": "#000"
+              },
+              "strokeWidth": {
+                "value": 1
+              }
+            },
+            "labels": {
+              "fontSize": {
+                "value": 17
+              },
+              "font": {
+                "value": "Helvetica"
+              },
+              "angle": {
+                "value": 0
+              },
+              "fill": {
+                "value": "#000"
+              }
+            },
+            "title": {
+              "font": {
+                "value": "Helvetica"
+              },
+              "fontSize": {
+                "value": 17
+              },
+              "fontWeight": {
+                "value": "bold"
+              },
+              "fill": {
+                "value": "#000"
+              }
+            },
+            "axis": {
+              "stroke": {
+                "value": "#000"
+              },
+              "strokeWidth": {
+                "value": 1
+              }
+            },
+            "grid": {
+              "stroke": {
+                "value": "#d8d8d8"
+              },
+              "strokeWidth": {
+                "value": 1
+              }
+            }
+          }
+        },
+        {
+          "type": "y",
+          "orient": "left",
+          "scale": "pipeline_0_scale_1",
+          "title": "Sleeptime",
+          "layer": "back",
+          "ticks": 10,
+          "tickSize": 6,
+          "titleOffset": 35,
+          "properties": {
+            "ticks": {
+              "stroke": {
+                "value": "#000"
+              },
+              "strokeWidth": {
+                "value": 1
+              }
+            },
+            "labels": {
+              "fontSize": {
+                "value": 17
+              },
+              "font": {
+                "value": "Helvetica"
+              },
+              "angle": {
+                "value": 0
+              },
+              "fill": {
+                "value": "#000"
+              }
+            },
+            "title": {
+              "font": {
+                "value": "Helvetica"
+              },
+              "fontSize": {
+                "value": 17
+              },
+              "fontWeight": {
+                "value": "bold"
+              },
+              "fill": {
+                "value": "#000"
+              }
+            },
+            "axis": {
+              "stroke": {
+                "value": "#000"
+              },
+              "strokeWidth": {
+                "value": 1
+              }
+            },
+            "grid": {
+              "stroke": {
+                "value": "#d8d8d8"
+              },
+              "strokeWidth": {
+                "value": 1
+              }
+            }
+          }
+        }
+      ],
+      "marks": [
+        {
+          "properties": {
+            "enter": {
+              "x": {
+                "scale": "pipeline_0_scale_0",
+                "field": "data.weekday",
+                "default": 1
+              },
+              "width": {
+                "scale": "pipeline_0_scale_0",
+                "band": true,
+                "offset": -1
+              },
+              "y": {
+                "scale": "pipeline_0_scale_1",
+                "field": "data.sleeptime",
+                "default": 1
+              },
+              "y2": {
+                "scale": "pipeline_0_scale_1",
+                "value": 0,
+                "default": 1
+              },
+              "fill": {
+                "value": "#4682b4"
+              },
+              "fillOpacity": {
+                "value": 1
+              },
+              "stroke": {
+                "value": "#000000"
+              },
+              "strokeWidth": {
+                "value": 0.25
+              }
+            }
+          },
+          "name": "rect_0",
+          "type": "rect",
+          "from": {
+            "data": "pipeline_0"
+          },
+          "lyra.displayName": "Rect 1"
+        },
+        {
+          "properties": {
+            "enter": {
+              "x": {
+                "scale": "pipeline_0_scale_0",
+                "field": "data.weekday"
+              },
+              "y": {
+                "scale": "pipeline_0_scale_1",
+                "field": "stats.mean_sleeptime"
+              },
+              "interpolate": {
+                "value": "monotone"
+              },
+              "tension": {
+                "value": 0
+              },
+              "stroke": {
+                "value": "#ff0000"
+              },
+              "strokeWidth": {
+                "value": 10
+              },
+              "strokeCap": {
+                "value": "butt"
+              }
+            }
+          },
+          "from": {
+            "data": "pipeline_0"
+          },
+          "name": "line_2",
+          "type": "line",
+          "lyra.displayName": "Line 3"
+        },
+        {
+          "properties": {
+            "enter": {
+              "x": {
+                "value": 198
+              },
+              "y": {
+                "value": 33
+              },
+              "text": {
+                "field": "vdeTextFormula_layer_0_text_4"
+              },
+              "align": {
+                "value": "center"
+              },
+              "baseline": {
+                "value": "middle"
+              },
+              "dx": {
+                "value": 0,
+                "offset": 0
+              },
+              "dy": {
+                "value": 0,
+                "offset": 0
+              },
+              "angle": {
+                "value": 0
+              },
+              "font": {
+                "value": "Helvetica"
+              },
+              "fontSize": {
+                "value": 41
+              },
+              "fontWeight": {
+                "value": "normal"
+              },
+              "fontStyle": {
+                "value": "normal"
+              },
+              "fill": {
+                "value": "#000000"
+              }
+            }
+          },
+          "from": {
+            "transform": [
+              {
+                "type": "formula",
+                "field": "vdeTextFormula_layer_0_text_4",
+                "expr": "\"Example Barchart\""
+              }
+            ],
+            "data": "pipeline_0"
+          },
+          "name": "text_4",
+          "type": "text",
+          "lyra.displayName": "Text 5"
+        }
+      ],
+      "name": "layer_0",
+      "type": "group",
+      "from": {},
+      "lyra.displayName": "Layer 1",
+      "lyra.groupType": "layer"
+    }
+  ]
+}
